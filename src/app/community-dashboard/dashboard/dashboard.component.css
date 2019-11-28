@@ -1,0 +1,125 @@
+.list-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    color: black;
+}
+
+.card-body {
+    color: black;
+}
+
+/* Chat containers */
+
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Darker chat container */
+
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+/* Clear floats */
+
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Style images */
+
+.container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+/* Style the right image */
+
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+/* Style time text */
+
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+/* Style time text */
+
+.time-left {
+    float: left;
+    color: #999;
+}
+
+.custom {
+    color: #FF6200;
+    ;
+}
+
+#text-area-width {
+    width: 100%;
+}
+
+.header-active {
+  
+    color: #000;
+}
+
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #f76307;
+    border-color: #f76307;
+}
+
+.messageButton {
+    margin-left: 81%;
+    margin-top: -12%;
+}
+
+.grouplist-item {
+    cursor: context-menu;
+}
+
+.right-user-block-message {
+    width: 100%;
+    text-align-last: right;
+    float: right;
+}
+
+.left-user-block-message {
+    width: 100%;
+    text-align-last: left;
+    float: left;
+}
+
+.messag-post-button {
+    margin-right: 11%;
+    background-color: #ff6200;
+    color: #fff;
+    float: right;
+    border-radius: 3px;
+    margin-top: -7%;
+}
+
+.header-grey{
+    background-color: #fff;
+    border-color: fff;
+    color: #000;
+}

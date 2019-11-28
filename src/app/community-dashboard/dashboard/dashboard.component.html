@@ -1,0 +1,96 @@
+<div class="container" style="margin: 100px auto;">
+
+    <div class="row">
+
+        <div class="col-lg-3" *ngIf="groupList">
+
+            <h3 class="my-4 custom">Group List</h3>
+            <p style="color: red;"> click on any group name to join & know more details</p>
+            <div class="list-group">
+                <p-accordion [multiple]="true">
+                   <p-accordionTab header="My Groups">
+                        <ng-container *ngFor="let groupItem of groupList;let i=index;">
+                            <span *ngIf= "(currentUserGroups.indexOf(groupItem.id.toString()) > -1)" (click)="addToGroup(groupItem);" class="list-group-item sub-filter grouplist-item"
+                                >{{groupItem?.groupName}}
+                            </span>
+                        </ng-container>
+                    </p-accordionTab>
+                    <p-accordionTab header="Other Groups">
+                            <ng-container *ngFor="let groupItem of groupList;let i=index;">
+                                <span *ngIf= "(currentUserGroups.indexOf(groupItem.id.toString())  < 0)" (click)="addToGroup(groupItem);" class="list-group-item sub-filter grouplist-item"
+                                   >{{groupItem?.groupName}}
+                                </span>
+                            </ng-container>
+                        </p-accordionTab>
+
+                </p-accordion>
+
+            </div>
+
+        </div>
+        <!-- /.col-lg-3 -->
+
+
+        <div class="col-lg-9">
+            <div class="card mt-4">
+
+                <div class="card-body header-grey">
+                    <h3 class="card-title">{{selectedGroup.groupName}}</h3>
+                    <h4>{{selectedGroup.description}}</h4>
+                </div>
+
+            </div>
+            <div class="card card-outline-secondary my-4">
+
+                <div class="card-header custom header-active">
+                    <h4>Messages</h4>
+                </div>
+                <div class="container"
+                    *ngIf="currentUserGroups && selectedGroup  && selectedGroup.id && currentUserGroups.indexOf(selectedGroup.id.toString()) > -1">
+                    <div style="width: 80%;"><textarea id="text-area-width" [(ngModel)]="messageString"
+                            rows="2"></textarea></div>
+                    <div class="messag-post-button"><button class="btn btn-ing-private"
+                            (click)=postComment(selectedGroup);>Send</button></div>
+
+
+                </div>
+                <div *ngIf="!showNoRecords">
+                    <div *ngFor="let item of filteredMessages">
+                        <div class="container custom" [ngClass]="(item.userId == userId) ? 'darker' : ''"
+                            *ngIf="item.messageText">
+                            <ng-container *ngIf="item.userId == userId">
+                                <span
+                                    class="right right-user-block-message"><strong>{{ userIndexArr[item.userId] | titlecase }}</strong></span>
+                                <img src="assets/bandmember.jpg" alt="Avatar" style="width:100%;" class="right">
+                            </ng-container>
+
+                            <ng-container *ngIf="item.userId != userId">
+                                <span
+                                    class="right left-user-block-message"><strong>{{ userIndexArr[item.userId] | titlecase }}</strong></span>
+                                <img src="assets/avatar_g2.jpg" alt="Avatar" style="width:100%;">
+
+                            </ng-container>
+
+                            <p style="color: black;">{{item.messageText}}
+
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div *ngIf="showNoRecords" class="container custom">No Messages Found !</div>
+
+            </div>
+
+
+            <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->

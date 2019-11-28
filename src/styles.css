@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    color: #fff;
+    background:#fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-orange {
+    background-color: #f76307! important;
+
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+}
+.btn-ing-private {
+color: #fff;
+    background-color: #ff6200;
+    border-color: #ff6200;
+}

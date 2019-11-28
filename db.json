@@ -1,0 +1,272 @@
+{
+  "users": [
+    {
+      "userName": "ram2",
+      "userEmail": "ram2",
+      "userPassword": "ram2",
+      "id": 3
+    },
+    {
+      "userName": "ram1",
+      "userEmail": "ram1",
+      "userPassword": "ram1",
+      "id": 4
+    },
+    {
+      "userName": "ram3",
+      "userEmail": "ram3@gmail.com",
+      "userPassword": "ram3",
+      "id": 5
+    },
+    {
+      "userName": "ram4",
+      "userEmail": "ram4",
+      "userPassword": "ram4",
+      "id": 6
+    },
+    {
+      "userName": "ram5",
+      "userEmail": "ram3@gmail.com",
+      "userPassword": "ram5",
+      "id": 7
+    }
+  ],
+  "groups": [
+    {
+      "groupName": "HCL Technologies",
+      "groupMembers": "5",
+      "description": "Joined HCL Group and now find your fellow Guys !",
+      "id": 3
+    },
+    {
+      "groupName": "TCS ",
+      "groupMembers": "4",
+      "description": "Joined TCS Group and now find your fellow Guys !",
+      "id": 4
+    },
+    {
+      "groupName": "Banglore ",
+      "groupMembers": "4",
+      "description": "Joined Banglore Group and now find your fellow Guys !",
+      "id": 5
+    },
+    {
+      "groupName": "Delhi ",
+      "groupMembers": "4",
+      "description": "Joined Delhi Group and now find your fellow Guys !",
+      "id": 6
+    },
+    {
+      "groupName": "North Indian ",
+      "groupMembers": "4",
+      "description": "Joined North Indian Group and now find your fellow Guys !",
+      "id": 7
+    },
+    {
+      "groupName": "South Indian ",
+      "groupMembers": "4",
+      "description": "Joined North South Group and now find your fellow Guys !",
+      "id": 8
+    }
+  ],
+  "user-groups": [
+    {
+      "groupName": "HCL Technologies",
+      "groupMembers": "1",
+      "groupId": "3",
+      "userId": "5",
+      "id": 9
+    },
+    {
+      "groupName": "HCL Technologies",
+      "groupMembers": "1",
+      "groupId": "3",
+      "userId": "6",
+      "id": 10
+    },
+    {
+      "groupName": "TCS ",
+      "groupMembers": "1",
+      "groupId": "4",
+      "userId": "6",
+      "id": 11
+    },
+    {
+      "groupName": "HCL Technologies",
+      "groupMembers": "1",
+      "groupId": "3",
+      "userId": "6",
+      "id": 12
+    },
+    {
+      "groupName": "Banglore ",
+      "groupMembers": "1",
+      "groupId": "5",
+      "userId": "6",
+      "id": 13
+    },
+    {
+      "groupName": "TCS ",
+      "groupMembers": "1",
+      "groupId": "4",
+      "userId": "5",
+      "id": 14
+    },
+    {
+      "groupName": "Banglore ",
+      "groupMembers": "1",
+      "groupId": "5",
+      "userId": "5",
+      "id": 15
+    },
+    {
+      "groupName": "Delhi ",
+      "groupMembers": "1",
+      "groupId": "6",
+      "userId": "6",
+      "id": 16
+    },
+    {
+      "groupName": "Delhi ",
+      "groupMembers": "1",
+      "groupId": "6",
+      "userId": "5",
+      "id": 17
+    },
+    {
+      "groupName": "North Indian ",
+      "groupMembers": "1",
+      "groupId": "7",
+      "userId": "5",
+      "id": 18
+    },
+    {
+      "groupName": "South Indian ",
+      "groupMembers": "1",
+      "groupId": "8",
+      "userId": "5",
+      "id": 19
+    },
+    {
+      "groupName": "North Indian ",
+      "groupMembers": "1",
+      "groupId": "7",
+      "userId": "6",
+      "id": 20
+    }
+  ],
+  "messages": [
+    {
+      "messageText": "ok i am in ",
+      "userId": "3",
+      "groupId": "3",
+      "id": 3
+    },
+    {
+      "messageText": "I am checking here",
+      "userId": "3",
+      "groupId": "3",
+      "id": 4
+    },
+    {
+      "messageText": "I am checking inside here",
+      "userId": "4",
+      "groupId": "3",
+      "id": 5
+    },
+    {
+      "messageText": "thi is the new group",
+      "userId": "5",
+      "groupId": "3",
+      "id": 6
+    },
+    {
+      "messageText": "yyyyy",
+      "userId": "6",
+      "groupId": "3",
+      "id": 7
+    },
+    {
+      "messageText": "yyyyy",
+      "userId": "6",
+      "groupId": "4",
+      "id": 8
+    },
+    {
+      "messageText": "i am new to this group",
+      "userId": "6",
+      "groupId": "5",
+      "id": 9
+    },
+    {
+      "messageText": "uuuu",
+      "userId": "5",
+      "groupId": "3",
+      "id": 10
+    },
+    {
+      "messageText": "this s sample",
+      "userId": "5",
+      "groupId": "4",
+      "id": 11
+    },
+    {
+      "messageText": "this is my first message in group 4 ",
+      "userId": "6",
+      "groupId": "6",
+      "id": 12
+    },
+    {
+      "messageText": "i am posting data",
+      "userId": "5",
+      "groupId": "6",
+      "id": 13
+    },
+    {
+      "messageText": "i am new",
+      "userId": "5",
+      "groupId": "6",
+      "id": 14
+    },
+    {
+      "messageText": "yyyyyy",
+      "userId": "5",
+      "groupId": "3",
+      "id": 15
+    },
+    {
+      "messageText": "yyyyyyy",
+      "userId": "5",
+      "groupId": "3",
+      "id": 16
+    },
+    {
+      "messageText": "uuuuuuuuuuuuu",
+      "userId": "5",
+      "groupId": "3",
+      "id": 17
+    },
+    {
+      "messageText": "this is new message",
+      "userId": "6",
+      "groupId": "7",
+      "id": 18
+    },
+    {
+      "messageText": "this i s uuuu",
+      "userId": "6",
+      "groupId": "3",
+      "id": 19
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
