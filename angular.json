@@ -21,7 +21,8 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/primeng/resources/themes/nova-light/theme.css",
@@ -62,7 +63,25 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
+            },
+            "ta": {
+              "aot": true,
+              "outputPath": "dist/angular-user-module-ta/",
+              "i18nFile": "translate/messages.ta.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ta",
+              "i18nMissingTranslation": "error"
+            },
+            "ka": {
+              "aot": true,
+              "outputPath": "dist/angular-user-module-ka/",
+              "i18nFile": "translate/messages.ka.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ka",
+              "i18nMissingTranslation": "error"
             }
           }
         },
@@ -74,6 +93,12 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-user-module:build:production"
+            },
+            "ta": {
+              "browserTarget": "angular-user-module:build:ta"
+            },
+            "ka": {
+              "browserTarget": "angular-user-module:build:ka"
             }
           }
         },
@@ -90,9 +115,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
+            "codeCoverage": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.css"
@@ -126,6 +153,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "angular-user-module"
 }

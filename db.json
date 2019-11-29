@@ -29,6 +29,12 @@
       "userEmail": "ram3@gmail.com",
       "userPassword": "ram5",
       "id": 7
+    },
+    {
+      "userName": "ram6",
+      "userEmail": "ram6@gmail.com",
+      "userPassword": "ram6",
+      "id": 8
     }
   ],
   "groups": [
@@ -153,6 +159,69 @@
       "groupId": "7",
       "userId": "6",
       "id": 20
+    },
+    {
+      "groupName": "South Indian ",
+      "groupMembers": "1",
+      "groupId": "8",
+      "userId": "6",
+      "id": 21
+    },
+    {
+      "groupName": "HCL Technologies",
+      "groupMembers": "1",
+      "groupId": "3",
+      "userId": "7",
+      "id": 22
+    },
+    {
+      "groupName": "TCS ",
+      "groupMembers": "1",
+      "groupId": "4",
+      "userId": "7",
+      "id": 23
+    },
+    {
+      "groupName": "Banglore ",
+      "groupMembers": "1",
+      "groupId": "5",
+      "userId": "7",
+      "id": 24
+    },
+    {
+      "groupName": "Banglore ",
+      "groupMembers": "1",
+      "groupId": "5",
+      "userId": "7",
+      "id": 25
+    },
+    {
+      "groupName": "North Indian ",
+      "groupMembers": "1",
+      "groupId": "7",
+      "userId": "7",
+      "id": 26
+    },
+    {
+      "groupName": "Delhi ",
+      "groupMembers": "1",
+      "groupId": "6",
+      "userId": "7",
+      "id": 27
+    },
+    {
+      "groupName": "HCL Technologies",
+      "groupMembers": "1",
+      "groupId": "3",
+      "userId": "8",
+      "id": 28
+    },
+    {
+      "groupName": "Banglore ",
+      "groupMembers": "1",
+      "groupId": "5",
+      "userId": "8",
+      "id": 29
     }
   ],
   "messages": [
@@ -257,6 +326,12 @@
       "userId": "6",
       "groupId": "3",
       "id": 19
+    },
+    {
+      "messageText": "this ii sbanglore",
+      "userId": "8",
+      "groupId": "5",
+      "id": 20
     }
   ],
   "comments": [
