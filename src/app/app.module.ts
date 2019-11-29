@@ -6,6 +6,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModuleModule } from './common-modules/common-module/common-module.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CommonModuleModule,
     HttpClientModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

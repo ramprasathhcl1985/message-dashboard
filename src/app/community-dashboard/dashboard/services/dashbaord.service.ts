@@ -11,9 +11,10 @@ import { ApplicationConstants } from '../../../constants/applicationConstant';
 export class DashboardService {
 
 
-  public groupInfo: BehaviorSubject<IGroups> = new BehaviorSubject<IGroups>(<IGroups>{});
+  public groupInfo: BehaviorSubject<IGroups> = new BehaviorSubject<IGroups>({} as IGroups);
 
-  constructor(private groupsList: RestService<IGroups>,  private userGroupsList: RestService<IUserGroups>,  private messageService: RestService<IMessages>, private getMessageService: RestService<IMessages[]>) { }
+  constructor(private groupsList: RestService<IGroups>, private userGroupsList: RestService<IUserGroups>,
+              private messageService: RestService<IMessages>, private getMessageService: RestService<IMessages[]>) { }
 
   public getGroupsList(groupId: string = ''): Observable<IGroups> {
     return this.groupsList.getData(ApplicationConstants.basePath, ApplicationConstants.groupsList,

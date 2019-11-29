@@ -7,6 +7,8 @@ import { UserRegisterComponent } from './user-register/user-register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 @NgModule({
   declarations: [
@@ -14,18 +16,21 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FooterComponent,
     UserRegisterComponent,
     UserLoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     CommonModule,
     CommonModuleRoutingModule,
     ReactiveFormsModule,
+    ConfirmDialogModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     UserRegisterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ConfirmDialogComponent
   ]
 })
 export class CommonModuleModule { }

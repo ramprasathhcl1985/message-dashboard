@@ -10,15 +10,15 @@
                 <p-accordion [multiple]="true">
                    <p-accordionTab header="My Groups">
                         <ng-container *ngFor="let groupItem of groupList;let i=index;">
-                            <span *ngIf= "(currentUserGroups.indexOf(groupItem.id.toString()) > -1)" (click)="addToGroup(groupItem);" class="list-group-item sub-filter grouplist-item"
-                                >{{groupItem?.groupName}}
+                            <span *ngIf= "(currentUserGroups.indexOf(groupItem.id.toString()) > -1)"  (click)="addToGroup(groupItem);" class="list-group-item sub-filter grouplist-item"
+                                >  {{groupItem?.groupName}}
                             </span>
                         </ng-container>
                     </p-accordionTab>
                     <p-accordionTab header="Other Groups">
                             <ng-container *ngFor="let groupItem of groupList;let i=index;">
-                                <span *ngIf= "(currentUserGroups.indexOf(groupItem.id.toString())  < 0)" (click)="addToGroup(groupItem);" class="list-group-item sub-filter grouplist-item"
-                                   >{{groupItem?.groupName}}
+                                <span *ngIf= "(currentUserGroups.indexOf(groupItem.id.toString())  < 0)" class="list-group-item sub-filter grouplist-item"
+                                   ><app-confirm-dialog [groupItem]="groupItem" (isConfirmed) ="groupConfirmed($event)"></app-confirm-dialog>
                                 </span>
                             </ng-container>
                         </p-accordionTab>

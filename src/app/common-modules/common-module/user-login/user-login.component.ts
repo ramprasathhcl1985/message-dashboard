@@ -25,7 +25,7 @@ export class UserLoginComponent implements OnInit {
     this.userLogin = this.fb.group({
       userName: this.userName,
       userPassword: this.userPassword
-    })
+    });
   }
 
   ngOnInit() {
@@ -38,8 +38,10 @@ export class UserLoginComponent implements OnInit {
   /* form submit checking suer login is present in the user List */
   public onSubmit(): void {
     if (this.userLogin.valid) {
-      if (this.userService.usersListArr.filter((data) =>  data.userName === this.userName.value && data.userPassword === this.userPassword.value)) {
-        this.usersList = this.userService.usersListArr.filter((data) => data.userName === this.userName.value  && data.userPassword === this.userPassword.value);
+      if (this.userService.usersListArr.filter((data) => data.userName === this.userName.value &&
+        data.userPassword === this.userPassword.value)) {
+        this.usersList = this.userService.usersListArr.filter((data) => data.userName === this.userName.value
+          && data.userPassword === this.userPassword.value);
         if (this.usersList.length > 0) {
           this.inValidUserMessage = '';
           this.userService.setSessionItem(ApplicationConstants.userLoginId, this.usersList[0].id.toString());

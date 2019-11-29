@@ -1,34 +1,65 @@
-<div class="signup-form" style="margin-top: 60px;">
-    <form [formGroup]="userRegisterForm" (ngSubmit)="onSubmit()" novalidate>
-		<div class="header-title"><h2>Sign Up</h2></div>
-	    <hr>
-        <div class="form-group">
-			<label>Username</label>
-            <input type="text" class="form-control" name="userName"  formControlName="userName" [ngClass]="{ 'is-invalid':  (userName.dirty || userName.touched) && userName.errors }">
-            <p class="input-error-text" *ngIf="userName.invalid  && (userName.dirty || userName.touched) && userName.errors.required">Enter user name is mandatory</p>
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-6">
+            <img src="assets/img-left-banner.png" style="padding-top: 25%;" />
+
         </div>
-        <div class="form-group">
-			<label>Emailaddress</label>
-            <input type="email" class="form-control" name="userEmail" formControlName="userEmail" [ngClass]="{ 'is-invalid':  (userEmail.dirty || userEmail.touched) && userEmail.errors }">
-            <p class="input-error-text" *ngIf="userEmail.invalid  && (userEmail.dirty || userEmail.touched) && userEmail.errors.required">Enter email</p>
-            <p class="input-error-text" *ngIf="userEmail.invalid  && (userEmail.dirty || userEmail.touched) && userEmail.errors.email">Enter valid email</p>
-      
+
+        <div class="col-lg-6">
+
+            <div class="signup-form" style="margin-top: 60px;">
+                <form [formGroup]="userRegisterForm" (ngSubmit)="onSubmit()" novalidate>
+                    <div class="header-title">
+                        <h2>Sign Up</h2>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" name="userName" formControlName="userName"
+                            [ngClass]="{ 'is-invalid':  (userName.dirty || userName.touched) && userName.errors }">
+                        <p class="input-error-text"
+                            *ngIf="userName.invalid  && (userName.dirty || userName.touched) && userName.errors.required">
+                            Enter user name is mandatory</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Emailaddress</label>
+                        <input type="email" class="form-control" name="userEmail" formControlName="userEmail"
+                            [ngClass]="{ 'is-invalid':  (userEmail.dirty || userEmail.touched) && userEmail.errors }">
+                        <p class="input-error-text"
+                            *ngIf="userEmail.invalid  && (userEmail.dirty || userEmail.touched) && userEmail.errors.required">
+                            Enter email</p>
+                        <p class="input-error-text"
+                            *ngIf="userEmail.invalid  && (userEmail.dirty || userEmail.touched) && userEmail.errors.email">
+                            Enter valid email</p>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="userPassword" formControlName="userPassword"
+                            [ngClass]="{ 'is-invalid':  (userPassword.dirty || userPassword.touched) && userPassword.errors }">
+                        <p class="input-error-text"
+                            *ngIf="userPassword.invalid  && (userPassword.dirty || userPassword.touched) && userPassword.errors.required">
+                            Enter valid password</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm password</label>
+                        <input type="password" class="form-control" name="userConfirmPassword"
+                            formControlName="userConfirmPassword"
+                            [ngClass]="{ 'is-invalid':  (userConfirmPassword.dirty || userConfirmPassword.touched) && userConfirmPassword.errors }">
+                        <p class="input-error-text"
+                            *ngIf="userConfirmPassword.invalid  && (userConfirmPassword.dirty || userConfirmPassword.touched) && userConfirmPassword.errors.required">
+                            Passwords not matched</p>
+
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+                    </div>
+                    <div class="text-center">Already have an account? <span class="register-link"
+                            (click)="goToLogin();">Login here</span></div>
+                </form>
+
+            </div>
         </div>
-		<div class="form-group">
-			<label>Password</label>
-            <input type="password" class="form-control" name="userPassword" formControlName="userPassword"  [ngClass]="{ 'is-invalid':  (userPassword.dirty || userPassword.touched) && userPassword.errors }">
-            <p class="input-error-text" *ngIf="userPassword.invalid  && (userPassword.dirty || userPassword.touched) && userPassword.errors.required">Enter valid password</p>
-        </div>
-		<div class="form-group">
-			<label>Confirm password</label>
-            <input type="password" class="form-control" name="userConfirmPassword" formControlName="userConfirmPassword" [ngClass]="{ 'is-invalid':  (userConfirmPassword.dirty || userConfirmPassword.touched) && userConfirmPassword.errors }">
-            <p class="input-error-text" *ngIf="userConfirmPassword.invalid  && (userConfirmPassword.dirty || userConfirmPassword.touched) && userConfirmPassword.errors.required">Passwords not matched</p>
-                  
-        </div>
-		<div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
-        </div>
-        <div class="text-center">Already have an account? <span class="register-link" (click)="goToLogin();">Login here</span></div>
-    </form>
-	
+    </div>
 </div>

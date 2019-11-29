@@ -24,15 +24,18 @@ export class DashboardComponent implements OnInit {
   public userIndexArr: string[] = [];
   public userId: string;
   public messageString: string;
-  public showNoRecords: boolean = false;
+  public showNoRecords = false;
+  public groupConfirmedByUser = false;
 
   constructor(private dashboard: DashboardService, private router: Router,
-    private headerService: HeaderService, private userService: UserApiService) { }
+              private headerService: HeaderService, private userService: UserApiService) { }
 
   ngOnInit() {
     this.dashboard.getGroupsList().
       subscribe((data: IGroups) => {
-        Object.keys(data).length > 0 ? this.dashboard.groupInfo.next(data[0]) : '';
+        if (Object.keys(data).length > 0) {
+          this.dashboard.groupInfo.next(data[0]);
+        }
         this.groupList = Object.values(data);
         if (sessionStorage.getItem(ApplicationConstants.userLoginId)) {
           this.userId = sessionStorage.getItem(ApplicationConstants.userLoginId);
@@ -51,22 +54,23 @@ export class DashboardComponent implements OnInit {
       });
     this.dashboard.groupInfo.subscribe((data) => {
       this.selectedGroup = data;
-    })
+    });
   }
   /* to subscibe the group  */
   public addToGroup(grpItem: IGroups): void {
-    if (this.checkUserAlreadyExistsInGroup(grpItem) && confirm(ApplicationConstants.joinGroupMessage)) {
+    if (this.checkUserAlreadyExistsInGroup(grpItem) && this.groupConfirmedByUser) {
+      console.log(' i ma innnn');
       this.dashboard.groupInfo.next(grpItem);
       const userGroupAddItem: IUserGroups = {
         groupName: grpItem.groupName,
         groupMembers: '1',
         groupId: grpItem.id.toString(),
         userId: this.userId
-      }
+      };
       this.dashboard.addUserToGroup(userGroupAddItem).subscribe((data) => {
         this.dashboard.groupInfo.next(grpItem);
         this.currentUserGroups.push(grpItem.id.toString());
-      })
+      });
     } else {
       this.dashboard.groupInfo.next(grpItem);
     }
@@ -77,7 +81,7 @@ export class DashboardComponent implements OnInit {
   private getUserGroups(userId: string) {
     this.dashboard.getUserGroupsList().subscribe((data) => {
       this.userGroupsList = Object.values(data);
-      this.userGroupsList = this.userGroupsList.filter((item) => item.userId == userId.toString());
+      this.userGroupsList = this.userGroupsList.filter((item) => item.userId === userId.toString());
       for (let i = 0; i < this.userGroupsList.length; i++) {
         this.currentUserGroups.push(this.userGroupsList[i].groupId);
       }
@@ -86,7 +90,7 @@ export class DashboardComponent implements OnInit {
   // to check the user is part of a particular group
   private checkUserAlreadyExistsInGroup(grpItem: IGroups): boolean {
     let userExits: IUserGroups[];
-    userExits = this.userGroupsList.filter((data) => data.groupId == grpItem.id.toString() && data.userId === this.userId.toString());
+    userExits = this.userGroupsList.filter((data) => data.groupId === grpItem.id.toString() && data.userId === this.userId.toString());
     return (userExits.length > 0) ? false : true;
   }
   // to post messages to the group
@@ -96,12 +100,12 @@ export class DashboardComponent implements OnInit {
         messageText: this.messageString,
         userId: this.userId,
         groupId: grpItem.id.toString()
-      }
+      };
       this.dashboard.addMessage(messageItem).subscribe((data) => {
         this.messageString = '';
         /* to get the updated list of messages */
         this.getMessageList();
-      })
+      });
     }
   }
   // to get the list of messages of that group
@@ -112,7 +116,7 @@ export class DashboardComponent implements OnInit {
         this.getRequiredMessages(this.groupMessageList);
       });
   }
-  // to filter the group messages 
+  // to filter the group messages
   getRequiredMessages(messages: IMessages[]) {
     this.filteredMessages = messages.filter((messageObject: IMessages) =>
       messageObject.groupId === this.selectedGroup.id.toString());
@@ -123,10 +127,20 @@ export class DashboardComponent implements OnInit {
   public getUsersList() {
     this.userService.getUsersList().subscribe((data) => {
       this.userService.usersListArr = data;
-      for (let i = 0; i < (this.userService.usersListArr.length); i++) {
+      for (const [i] of this.userService.usersListArr.entries()) {
         /* to display the user name in UI */
-        this.userIndexArr[this.userService.usersListArr[i].id] = this.userService.usersListArr[i].userName;
+           this.userIndexArr[this.userService.usersListArr[i].id] = this.userService.usersListArr[i].userName;
       }
+     
     });
+  }
+
+  public groupConfirmed(event) {
+    this.groupConfirmedByUser = event;
+    if ((Object.keys(event).length > 0)) {
+      this.groupConfirmedByUser = true;
+      this.addToGroup(event);
+    }
+
   }
 }

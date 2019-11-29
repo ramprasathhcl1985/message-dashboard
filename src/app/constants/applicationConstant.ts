@@ -1,13 +1,13 @@
 export class  ApplicationConstants {
 
-    public static basePath : string  = 'http://localhost:3000/';
-    public static usersList: string  = 'users';
-    public static contentTYpe: string ='application/json';
-    public static userLoginId: string ='USER-LOGIN-ID';
-    public static groupsList: string  = 'groups';
-    public static userGroupsList: string  = 'user-groups';
-    public static messageList: string  = 'messages';
-    public static joinGroupMessage: string  = 'Are you sure want to join this group?';
-    public static loginErrorMessage: string = 'Invalid user credentials';
+    public static basePath  = 'http://localhost:3000/';
+    public static usersList  = 'users';
+    public static contentTYpe = 'application/json';
+    public static userLoginId = 'USER-LOGIN-ID';
+    public static groupsList  = 'groups';
+    public static userGroupsList  = 'user-groups';
+    public static messageList  = 'messages';
+    public static joinGroupMessage  = 'Are you sure want to join this group?';
+    public static loginErrorMessage = 'Invalid user credentials';
 
 }

@@ -8,7 +8,10 @@ import { AuthGuardService } from './core-services/auth-guard.service';
 const routes: Routes = [
   { path: 'register', component: UserRegisterComponent },
   { path: 'login', component: UserLoginComponent },
-  { path: 'customer', loadChildren: () => import('./community-dashboard/community-dashboard.module').then(m => m.CommunityDashboardModule), canActivate: [AuthGuardService] },
+  {
+    path: 'customer', loadChildren: () => import('./community-dashboard/community-dashboard.module').then(m => m.CommunityDashboardModule),
+    canActivate: [AuthGuardService]
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
